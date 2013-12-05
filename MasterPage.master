@@ -1,0 +1,286 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+      <head id="Head1" runat="server">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+            
+            <!--CSS imports--> 
+            <link rel="shortcut icon" href="bootstrap-3.0.0/Favicon.png">
+            <link rel="icon" type="image/png" href="art-images/favicon.png"/>
+
+            <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+
+            <link href="offcanvas.css" rel="stylesheet">
+
+            <link href="bootstrap-3.0.0/dist/css/jumbotron.css" rel="stylesheet">
+            
+            <!--Custom CSS styling-->
+            <link href="bootstrap-3.0.0/custom.css" rel="stylesheet">
+            
+            <!--CSS styling that overwrites boostrap defaults-->
+            <link href="bootstrap-3.0.0/boostrap-override.css" rel="stylesheet" />
+
+
+
+            <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <![endif]-->
+
+            
+            <!-- Custom styles for this template -->
+            <link href="bootstrap-3.0.0/offcanvas.css" rel="stylesheet">
+            
+            <!--Page title. This is replaced with an actual title in ever other page-->
+            <title></title>
+       </head>     
+      
+<body>
+    <form id="form1" runat="server">
+        
+        <!--Top Navigation bar-->
+        <!--navbar navbar-inverse navbar-fixed-top-->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+            <!-- TopNav -->
+            <div class="container">
+                <!--Assignment 2 Link-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                
+                <!--/A2 Link-->
+                </div>
+            
+            <!--Primary navigation-->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="Default.aspx"><img src="bootstrap-3.0.0/PinpointXs.png" alt="Pinpoint Art" /></a></li>
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="About.aspx">About Us</a></li>
+                    <!--<li><a href="AdvancedSearch.aspx">Advanced Search</a></li>-->
+
+                    <!--Browse dropdown-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ArtistList.aspx">Artists</a></li>
+                            <li><a href="ArtworkList.aspx">Artworks</a></li>
+                            <li><a href="GenreList.aspx">Genres</a></li>
+                            <li><a href="SubjectList.aspx">Subjects</a></li>                       
+                        </ul>
+                    </li>     
+                    <!--/Browse dropdown-->
+                      
+                </ul>
+                
+                <!--Right navbar-->
+                <div class="navbar-form navbar-right"> 
+
+                    <!--Search Paintings textbox-->            
+                    <div class="form-group">
+
+                    <asp:TextBox runat="server" CssClass="form-control square" ID="navSearch" Placeholder="Artists & Artworks"></asp:TextBox>
+                        
+                    <!--/Search Paintings textbox-->
+                    </div>
+                    
+                   
+                    
+                    <!--Search button and advanced search dropdown-->
+                    <div class="btn-group sqaure">
+                        <asp:Button  runat="server" ID="Button1" CssClass="btn btn-primary sqaure" Text="Search" OnClick="SimpleSearch_Click"/>
+                        <!--<button type="button" class="btn btn-primary">Search</button>-->
+                        <button type="button" class="btn btn-primary dropdown-toggle sqaure" data-toggle="dropdown">
+                            <span class="caret sqaure"></span>
+                            <span class="sr-only sqaure">Toggle Dropdown</span>
+                        </button>
+                        
+                        <!--Link to advanced search page (in drop down menu that appears when the carrot is clicked)-->
+                        <ul class="dropdown-menu sqaure" role="menu">
+                          <li><a href="AdvancedSearch.aspx">Advanced Search</a></li>
+                        </ul>
+                    </div>
+
+                                           
+
+                <!--/Right navbar-->
+                </div>
+                 
+            <!--/.navbar-collapse-->
+            </div>
+            
+            <!-- /TopNav -->
+            </div>
+        <!--/navbar navbar-inverse navbar-fixed-top-->
+        </div>
+
+       
+        <!--Main page container-->
+        <div class="container">
+
+             <a href="SingleArtwork.aspx?id=63" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topAd">
+            </a>
+
+            <div class="row">
+               
+                <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2 square" id="Div1" role="navigation">
+                    <!--Utities navigation-->
+                    <div class="list-group square">
+                        <span class="list-group-item active">Utilities</span>
+                        <div class="list-group-item">
+          
+                            <asp:LoginName ID="logName" runat="server" FormatString="<strong>{0}</strong>" />
+                            <asp:LoginStatus ID="logStatus" runat="server" CssClass="orange-text" />
+                        </div>
+
+                        <!--Adjusts which buttons to show based on the state of the user-->
+                        <asp:LoginView ID="LoginView1" runat="server">
+
+                            <AnonymousTemplate>
+                                <a href="register.aspx" class="list-group-item">Register</a>
+                            </AnonymousTemplate>
+
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="administrator">
+                                    <ContentTemplate>
+                                        <a href="CustomerList.aspx" class="list-group-item square">Modify Customer</a>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+
+                        </asp:LoginView>
+
+                        <a href="ViewCart.aspx" class="list-group-item">View Cart</a>  
+                        <a href="ViewFav.aspx" class="list-group-item square">View Favorites</a>
+
+                    </div>
+
+                    
+                    
+                    <!--Popular Artists list that populates a drop down menu on the left side of the page-->
+                    <div class="btn-group fullWidthMasterButtons">
+                        <button type="button" class="btn btn-primary dropdown-toggle fullWidthMasterButtons" data-toggle="dropdown">
+                            Popular Artists
+                            <span class="caret textRight"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <!--Used to fill -->
+                            <asp:Repeater ID="popArtists" runat="server">
+                                <ItemTemplate>
+                                    <li><a href="SingleArtist.aspx?id=<%# Eval("ID") %>"><%# Eval("FirstName") %> <%# Eval("LastName") %></a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </div>
+
+
+                    <!--Subjects list that populates a drop down menu on the left side of the page-->
+                    <div class="btn-group fullWidthMasterButtons">
+                        <button type="button" class="btn btn-primary dropdown-toggle menuButtons fullWidthMasterButtons" data-toggle="dropdown">
+                            Subjects
+                            <span class="caret textRight"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <asp:Repeater ID="subjectRepeater" runat="server">
+                                <ItemTemplate>
+                                    <li><a href="SingleSubject.aspx?id=<%# Eval("ID") %>&subject=1"><%# Eval("SubjectName") %></a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </div>  
+
+
+                    <!--Genres list that populates a drop down menu on the left side of the page-->
+                    <div class="btn-group fullWidthMasterButtons">
+                        <button type="button" class="btn btn-primary dropdown-toggle menuButtons fullWidthMasterButtons" data-toggle="dropdown">
+                            Genres
+                            <span class="caret textRight"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <asp:Repeater ID="genreRepeater" runat="server">
+                                <ItemTemplate>
+                                    <li><a href="SingleGenre.aspx?id=<%# Eval("Id") %>&genre=1"><%# Eval("GenreName") %></a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>       
+                    </div>
+
+
+                    <!--Side Add-->
+                    <div class="btn-group fullWidthMasterButtons noTopMargin">
+                        <a href="ArtistList.aspx" class="sideAd"></a>
+                    <!--End of side add-->
+                    </div>
+
+                <!--/Div1-->
+                </div>
+
+
+
+                <!--Dynamic page content that is filled upon a page visit through the content placeholder-->
+                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 pull-right" >
+                   <asp:ContentPlaceHolder ID="pageContent"  runat="server" ></asp:ContentPlaceHolder>
+
+                    <!--Extra spacing-->
+                    <br class="clearAll" />
+                    <br class="clearAll" />
+                <!--/col-xs-9 col-sm-9 col-md-9 col-lg-8-->
+                </div>
+                
+                <!--More extra spacing-->
+                <br class="clearAll" />
+                <br class="clearAll" />
+     
+         <!--/row-->
+         </div>
+     
+    <!--/.container-->
+    </div>
+
+
+            
+
+    <!--Footer-->
+    <footer style="padding-top:10px; padding-bottom:10px; margin-bottom:0px; border-top: 2px solid #cd4d34; z-index:1000;" class="centerMargins navbar-fixed-bottom">
+            
+            <!--Popovers in the to provide some information about the developers-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Tyler primarily coded the front end for this website and ensured that the design was fully responsive and cohesive. He also worked on the back end data binding code." data-original-title="" title="">
+                Tyler Rop
+                </button>
+
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Anthony was the main back end wizard-programmer for this site, you can thank him for a lot of the cool functionality." data-original-title="" title="">
+                Anthony Thomasson
+                </button>
+
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Paul worked as a jack-of-all-trades. He primarily coded back-end functionality, but also designed the logo and color scheme for the site." data-original-title="" title="">
+                Paul DeRose
+                </button>
+            </div>
+    </footer>
+    
+
+
+
+        <!--Bootstrap core JavaScript
+        <!--Placed at the end of the document so the pages load faster-->
+        <script src="bootstrap-3.0.0/assets/js/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+        <script src="bootstrap-3.0.0/js/offcanvas.js"></script>
+        <!--Used for popover in foter-->
+        <script src="bootstrap-3.0.0/js/application.js"></script>
+            
+    </form>
+</body>
+</html>

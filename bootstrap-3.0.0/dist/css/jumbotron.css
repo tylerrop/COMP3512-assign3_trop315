@@ -1,0 +1,81 @@
+/* Custom CSS */
+
+/* Built-in Bootstrap CSS */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+/* Custom sizing hor heading2 for proper formatting*/
+h2 {
+    font-size: 1.5em; 
+}
+
+/* Custom spacing for Artist List */
+#spacer {
+    display: block;
+    width: 100%;
+    padding-top: 1.5em;
+}
+
+/* Custom styling for buttons (Favourite, Cart, Wish List) */
+.buttonStyle,
+.buttonStyle:hover {
+    color: #428BCA;
+    font-weight:bold;
+    margin-bottom: 1em;
+}
+
+/* Red and bolded price on single work page */
+#price {
+    color: red;
+    font-weight:bold;
+}
+
+/* Ensures images are of a certain size on single work and single artist */
+#customPic {
+    min-width: 20em;
+}
+
+/* Ensures panel on single artist is the proper size */
+#customDetail {
+    width: 35em;
+}
+
+/* Eliminate left padding on related works section */
+#otherArt {
+    padding-left: 0;
+}
+
+/* Styles artist info panel to eliminate left padding and bold text */
+#panelStyle {
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+/* Styles text to swap to "..." if it breaks out of its container */
+#overFlow {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow:ellipsis;
+}
+
+/* Custom styling for genre list on single work */
+.detailsList {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+/* Styles the modal picture so it doesn't break out of the modal*/
+#modalPic {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Increases size and weight of search heading */
+#searchHeading {
+    font-weight: bold;
+    font-size: 13px;
+}

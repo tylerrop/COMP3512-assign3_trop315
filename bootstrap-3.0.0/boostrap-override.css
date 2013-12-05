@@ -1,0 +1,132 @@
+.list-group-item.active, 
+.list-group-item.active:hover, 
+.list-group-item.active:focus, 
+.btn-primary,
+.list-group-item.active, 
+.list-group-item.active:hover, 
+.list-group-item.active:focus,
+.list-group-item.active, 
+.list-group-item.active:hover, 
+.list-group-item.active:focus, 
+.btn-primary, 
+.list-group-item.active, 
+.list-group-item.active:hover, 
+.list-group-item.active:focus,
+.label,
+.label-default[href]:hover,
+.label-default[href]:focus,
+.label-primary,
+.label-primary[href]:hover,
+.label-primary[href]:focus,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, .btn-primary.active, 
+.open .dropdown-toggle.btn-primary,
+a.list-group-item:hover, a.list-group-item:focus,
+.panel-primary > .panel-heading
+{
+	background-color: #cd4d34;
+	border-color: #cd4d34;
+}
+
+.panel-primary{
+	border-color: #cd4d34;
+}
+
+.orange, 
+.orange:hover, 
+.orange:focus, 
+.orange:active, 
+.navbar-nav > .open > a, 
+.navbar-inverse .navbar-nav > .open > a:hover, 
+.navbar-inverse .navbar-nav > .open > a:focus 
+{
+	background-color: #032531;
+	border-color: #cd4d34;
+    text-decoration-color: #cd4d34;
+}
+
+.orange-text, .orange-text:hover, .orange-text:active
+{
+	color: #cd4d34;
+}
+
+/*left menu highlight*/
+a.list-group-item:hover, 
+a.list-group-item:focus
+{
+	background-color: #dddddd;
+	border-color: #dddddd;
+}
+
+.orangeBorder{
+	border-color: #cd4d34;
+}
+
+footer {
+	padding: 0;
+	margin-bottom: 0px;
+	background-color: #032531;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #cd4d34;
+}
+
+.btn, 
+.dropdown-menu,
+.list-group-item:first-child,
+.panel,
+.panel-heading,
+.listThumbNail,
+.thumbnail,
+.form-control,
+.list-group-item:last-child,
+.popover,
+.modal-content
+{
+	border-radius: 0px;
+}
+
+.nav > li > a > img {
+max-width: none;
+margin-top: -11px;
+}
+
+.btn {
+    background-color: #cd4d34;
+    border:none;
+    color:white;
+}
+
+    .btn:hover, .btn-default:hover, .btn:after {
+        color:white;
+        background-color: #9a260f;
+    }
+
+
+a.list-group-item
+div.list-group-item a {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    text-decoration:none;
+}
+
+    div.list-group-item:hover,
+    div.list-group-item:focus,
+    div.list-group-item a:hover,
+    div.list-group-item a:focus,
+    a.list-group-item:hover,
+    a.list-group-item:focus
+    {
+        color:#cd4d34;
+        background-color:white;
+        text-decoration:none;
+    }
+
+div.list-group-item,
+div.list-group-item a {
+    color: #555555;
+    text-decoration:none;
+}

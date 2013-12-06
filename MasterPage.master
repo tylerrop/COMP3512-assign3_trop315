@@ -127,9 +127,9 @@
        
         <!--Main page container-->
         <div class="container">
-
-             <a href="SingleArtwork.aspx?id=63" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topAd">
-            </a>
+            <!--
+            <a href="SingleArtwork.aspx?id=63" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 topAd">
+            </a>-->
 
             <div class="row">
                
@@ -217,10 +217,12 @@
 
 
                     <!--Side Add-->
+                    <!--
                     <div class="btn-group fullWidthMasterButtons noTopMargin">
                         <a href="ArtistList.aspx" class="sideAd"></a>
-                    <!--End of side add-->
-                    </div>
+
+                    <!--End of side add
+                    </div>-->
 
                 <!--/Div1-->
                 </div>

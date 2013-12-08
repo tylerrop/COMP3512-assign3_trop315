@@ -39,9 +39,10 @@
                                     </tr>
                                 </tbody>
                             </table>
-
-                            <!--Favorites button-->
-                            <uc:FavArtistBtn runat="server" id="FavArtistBtn" />
+                            <div class="btn-group noLeftMargin">
+                                <!--Favorites button-->
+                                <uc:FavArtistBtn runat="server" id="FavArtistBtn" />
+                            </div>
 
                         </td>
                     </tr>
